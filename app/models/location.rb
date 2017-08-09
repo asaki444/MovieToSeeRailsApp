@@ -1,5 +1,5 @@
 class Location < ApplicationRecord
-    validates :zipcode, presence: true
+    validates :city, presence: true
     belongs_to :user
     belongs_to :movie
 

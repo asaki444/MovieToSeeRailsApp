@@ -1,0 +1,21 @@
+<%= form_for(@movie) do |f| %>
+    <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br>
+        <%= f.label :description %><br>
+        <%= f.text_area :description %><br>
+    </div>
+    
+    Location:
+
+    <div class = "field">
+    <%= f.collection_check_boxes :location_ids, Location.all, :id, :city %>
+        <%= f.fields_for :locations, @movie.locations.build do |location_fields| %>
+                <%= location_fields.label :zip_code %>
+                <%= location_fields.number_field :zip_code %>
+                <%= location_fields.label :city %>
+                <%= location_fields.text_field :city %>
+        <% end %>
+    </div>
+    <%= f.submit %>
+<% end %>
