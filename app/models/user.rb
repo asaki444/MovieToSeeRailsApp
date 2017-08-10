@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_secure_password
   has_many :locations
   has_many :movies, through: :location
   # Include default devise modules. Others available are:

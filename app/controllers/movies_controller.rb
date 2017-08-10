@@ -7,8 +7,12 @@ class MoviesController < ApplicationController
         end
     end
     
-    def index
-      @movies = Movie.All
+    def home
+     if user_signed_in?
+      @movies = Movie.all
+     else
+      redirect_to 'users/show'
+     end
     end
 
     private
