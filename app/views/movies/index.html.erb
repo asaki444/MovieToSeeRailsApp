@@ -1,9 +1,13 @@
-<%= current_user.movies do |movie|%>
-        <div>
-            <%= movie.name %>
-            <%= movie.description %>
-            <% movie.locations do |location| %>
-                <%= location.city %>
-            <% end %>
-        </div>
-<% end %>
+    <%= current_user.movies.each do |movie|%>
+            <div>
+                <%= movie.name %>
+                <%= movie.description %>
+                    <% movie.locations.each do |location| %>
+                        <%= location.city %>
+                        <%= location.zip_code %>
+                    <% end %>
+            </div>
+    <% end %>
+
+
+    <%= link_to "Add Some Movies!", new_movie_path %>

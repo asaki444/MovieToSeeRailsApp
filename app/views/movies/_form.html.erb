@@ -9,12 +9,12 @@
     Location:
 
     <div class = "field">
-    <%= f.collection_check_boxes :location_ids, Location.all, :id, :city %>
-        <%= f.fields_for :locations, movie.locations.build do |location_fields| %>
+     <%= f.fields_for :locations, movie.locations.build do |location_fields| %>
                 <%= location_fields.label :zip_code %>
                 <%= location_fields.number_field :zip_code %>
                 <%= location_fields.label :city %>
                 <%= location_fields.text_field :city %>
+                <%= location_fields.hidden_field :user_id, :value => current_user.id %>
         <% end %>
     </div>
     <%= f.submit %>
