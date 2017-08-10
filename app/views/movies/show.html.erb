@@ -1,0 +1,9 @@
+<h1><%= @movie.name %></h1>
+
+<p><%= @movie.description %></p>
+
+<ul>
+    <% @movie.locations do |location| %>
+        <li><%= location.zip_code %><br><%= location.city %></li>
+    <% end %>
+</ul>

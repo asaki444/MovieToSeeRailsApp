@@ -1,6 +1,14 @@
 class MoviesController < ApplicationController
     def new
-     @movie = Movie.new
+        if user_signed_in?
+        @movie = Movie.new
+        else
+        redirect_to root_path
+        end
+    end
+    
+    def index
+      @movies = Movie.All
     end
 
     private
