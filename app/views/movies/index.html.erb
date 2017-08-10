@@ -1,13 +1,14 @@
-    <%= current_user.movies.each do |movie|%>
+    <% @movies.each do |movie|%>
             <div>
+                <h3>Movie Title: </h3>
                 <%= movie.name %>
                 <%= movie.description %>
+                <h5>Locations: </h5>
                     <% movie.locations.each do |location| %>
                         <%= location.city %>
                         <%= location.zip_code %>
                     <% end %>
             </div>
     <% end %>
-
 
     <%= link_to "Add Some Movies!", new_movie_path %>

@@ -8,11 +8,20 @@ class MoviesController < ApplicationController
         end
     end
     
-    def create
-    movie = Movie.create(movie_params)
-    redirect_to movies_path
+    def show 
+        @movie = Movie.find_by(id: params[:id])
     end
 
+    def create
+        movie = Movie.create(movie_params)
+        redirect_to movies_path
+    end
+    
+    def index
+       @movies = current_user.movies
+    end
+
+    
     private
  
     def movie_params
