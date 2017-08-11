@@ -1,13 +1,9 @@
-    <% @movies.each do |movie|%>
+    <% @movies.uniq.each do |movie|%>
             <div>
                 <h3>Movie Title: </h3>
                 <%= movie.name %>
                 <%= movie.description %>
-                <h5>Locations: </h5>
-                    <% movie.locations.each do |location| %>
-                        <%= location.city %>
-                        <%= location.zip_code %>
-                    <% end %>
+                <%= link_to "Locations", movie_locations_path %>
             </div>
     <% end %>
 

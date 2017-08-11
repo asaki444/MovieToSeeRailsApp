@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :movies
   devise_for :users
   root to: "application#home"
-  resources :users, only: [:show, :index] do
-    resources :movies
+  resources :movies, only: [:show, :index] do
+    resources :locations
   end
 end

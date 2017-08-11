@@ -1,3 +1,4 @@
+require 'pry'
 class Movie < ApplicationRecord
     validates :name, :description, presence: true
     has_many :locations
@@ -12,7 +13,7 @@ class Movie < ApplicationRecord
     end
 
     def self.popular
-      group("users.id").count("(users.id) DESC").limit(1)
+      group(:user_id).limit(1)
     end
 
 end

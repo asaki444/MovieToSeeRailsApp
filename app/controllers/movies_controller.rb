@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
     
     def index
        @movies = current_user.movies
+       @popular = Movie.popular
     end
 
     
