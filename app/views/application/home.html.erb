@@ -1,21 +1,18 @@
 
 <h1>Movies To See App</h1>
     <p>collect all the movies you have been dying to see from anywhere in the US and beyond!</p>
-<%= @popular %>
 <% if !@movies.empty? %>
-    <% @movies.all do |movie|%>
+    <% @movies.all.each do |movie|%>
         <div>
-            <%= movie.name %>
-            <%= movie.description %>
-            <% movie.locations do |location|%>
-                <%= locatian.city %>
-            <% end %>
+            Name: <%= movie.name %><br>
+            Description: <%= movie.description %><br>
+            <%= link_to "Locations", movie_locations_path(movie) %>
+        </div>
     <% end %>
 <% else %>
-        </div>
      <h3>Looks like no one has added their movies!</h3>
 <% end %>
 
 <%= link_to "Sign In", new_user_session_path %>
-
+<%= link_to "Facebook Sign In", user_facebook_omniauth_authorize_path %>
 <%= link_to "Sign Up", new_user_registration_path %>

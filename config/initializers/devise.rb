@@ -106,7 +106,7 @@ Devise.setup do |config|
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 11
-
+  config.omniauth :facebook, "1948464915407414", "c0d29d17a584d5d6d6e2d760fff7a0fb"
   # Set up a pepper to generate the hashed password.
   # config.pepper = '0c7b7ab6a599b61315f7d1851dfa915150c12a912487311e7ce94567e94a6df98580b0b83611eea365d7d2ab3ddd26cfb3bf99bc139604aacf5df68eed2691b3'
 
