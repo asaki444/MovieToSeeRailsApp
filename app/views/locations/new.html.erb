@@ -1,0 +1,9 @@
+<%= form_for (@location) do |f| %>
+    <%= f.label :zip_code %><br>
+    <%= f.text_field :zip_code %><br>
+    <%= f.label :city %><br>
+    <%= f.text_area :city %><br>
+    <%= f.hidden_field :user_id, :value =>  current_user.id %>
+    <%= f.hidden_field :movie_id, :value => @movie_id %>
+    <%= f.submit %>
+<%= end %>
