@@ -1,7 +1,10 @@
 
-<h1 id="title">Movies To See App</h1>
+<h1 class="jumbotron heading">Movies To See App</h1>
+    <div class="container">
     <p>collect all the movies you have been dying to see from anywhere in the US and beyond!</p>
-<% if !@movies.empty? %>
+    </div>
+<div class="container">
+    <% if !@movies.empty? %>
     <% @movies.all.each do |movie|%>
         <div>
             Name: <%= movie.name %><br>
@@ -12,9 +15,4 @@
 <% else %>
      <h3>Looks like no one has added their movies!</h3>
 <% end %>
-
-<div id="footer">
-    <%= link_to "Sign In", new_user_session_path %>
-    <%= link_to "Facebook Sign In", user_facebook_omniauth_authorize_path %>
-    <%= link_to "Sign Up", new_user_registration_path %>
 </div>
